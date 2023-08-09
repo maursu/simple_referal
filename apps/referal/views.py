@@ -1,8 +1,6 @@
-from django.contrib.auth import login
-from django.shortcuts import render
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import permissions
 from rest_framework.generics import CreateAPIView
-from rest_framework.generics import ListAPIView
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -30,11 +28,12 @@ class AuthorizeUserView(CreateAPIView):
 
 
 class LoginUserView(APIView):
+    @swagger_auto_schema(request_body=serializers.LoginSerializer)
     def post(self, request):
         context = {"request": self.request}
         serializer = serializers.LoginSerializer(data=request.data, context=context)
         serializer.is_valid(raise_exception=True)
-        return Response("balsdf")
+        return Response("logined")
 
 
 class ProfileView(RetrieveUpdateAPIView):

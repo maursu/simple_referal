@@ -1,0 +1,9 @@
+Django
+djangorestframework
+redis
+celery
+psycopg2-binary
+pre-commit
+drf-yasg
+python-dotenv
+gunicorn

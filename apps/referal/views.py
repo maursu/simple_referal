@@ -33,7 +33,7 @@ class LoginUserView(APIView):
         context = {"request": self.request}
         serializer = serializers.LoginSerializer(data=request.data, context=context)
         serializer.is_valid(raise_exception=True)
-        return Response("Logined")
+        return Response("logined")
 
 
 class ProfileView(RetrieveUpdateAPIView):

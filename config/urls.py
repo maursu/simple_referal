@@ -24,12 +24,9 @@ urlpatterns_api = [
     path("docs/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 ]
 
-urlpatterns_ui = [path("", include("apps.referal.urls_ui"))]
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/", include(urlpatterns_api)),
-    path("", include(urlpatterns_ui)),
 ]
 
 if settings.DEBUG:

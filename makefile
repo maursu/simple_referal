@@ -1,5 +1,5 @@
 make run:
-	python manage.py runserver
+	python manage.py runserver --settings='config.settings-dev'
 
 make migrate:
 	python manage.py makemigrations
